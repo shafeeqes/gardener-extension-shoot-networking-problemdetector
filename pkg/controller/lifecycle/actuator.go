@@ -265,7 +265,7 @@ func (a *actuator) getShootAgentResources(defaultPeriod time.Duration, pingEnabl
 		deployConfig.K8sExporterHeartbeat = 3 * time.Minute
 		if k8sExporter.HeartbeatPeriod != nil {
 			if k8sExporter.HeartbeatPeriod.Duration < 1*time.Minute {
-				return nil, fmt.Errorf("Invalid k8sExporter.heartbeatPeriod. Must be >= 1m")
+				return nil, fmt.Errorf("invalid k8sExporter.heartbeatPeriod. Must be >= 1m")
 			}
 			deployConfig.K8sExporterHeartbeat = k8sExporter.HeartbeatPeriod.Duration
 		}
